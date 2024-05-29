@@ -8,16 +8,26 @@ CloudflareWorkers 練習
 
 # 安裝
 
+wrangler (cloudflare workers cli工具)
+
 ```bash
-# 安裝 Node.js 版本至少 16.x
+# 安裝 wrangler, (Node.js 版本至少 16.x
 npm install -g wrangler
+```
+
+# 配置文檔
+
+```ini
+# .dev.vars
+SECRET_KEY=value
+API_TOKEN=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9
 ```
 
 # 用法
 
 ```bash
-wrangler init js_worker
-cd js_worker
+wrangler init $dir
+cd $dir
 npm run start
 npm run deploy
 ```

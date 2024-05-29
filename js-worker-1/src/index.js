@@ -42,8 +42,8 @@ export default {
 
     // 這是一個允許未經認證訪問 /generate 的示範 Worker
     // 在真實應用中，你應該確保只有經過認證的用戶才能生成已簽名的 URL
-    if (url.pathname.startsWith("/generate/")) {
-      url.pathname = url.pathname.replace("/generate/", "/");
+    if (url.pathname.startsWith("/g/")) {
+      url.pathname = url.pathname.replace("/g/", "/");
 
       const timestamp = Math.floor(Date.now() / 1000);
 
