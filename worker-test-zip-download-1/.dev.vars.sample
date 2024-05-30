@@ -1,0 +1,3 @@
+# 加密密鑰
+SECRET_KEY=value
+ORIGIN_URL_HOST=
