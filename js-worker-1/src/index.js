@@ -15,18 +15,23 @@ const encoder = new TextEncoder();
 // HMAC token 應該有效的時間（以秒為單位）
 const EXPIRY = 60;
 
+addEventListener('fetch', event => {
+  event.respondWith(handleRequest(event.request))
+})
+
 export default {
   /**
    *
    * @param {Request} request
-   * @param {{SECRET_DATA: string}} env
+   * @param {{SECRET_KEY: string}} env
    * @returns
    */
   async fetch(request, env) {
     // 你將需要一些用作對稱密鑰的秘密數據。這應該附加到你的 Worker 作為加密秘密。
     // 參考 https://developers.cloudflare.com/workers/configuration/secrets/
     const secretKeyData = encoder.encode(
-      env.SECRET_DATA ?? "my secret symmetric key"
+      // env.SECRET_KEY ?? "my secret symmetric key"
+      env.SECRET_KEY
     );
 
     // 將你的秘密作為 CryptoKey 導入，用於 'sign' 和 'verify' 操作

@@ -1,0 +1,4 @@
+# 加密密鑰
+SECRET_KEY=value
+# 生成網址的主域名
+ZIP_HOST=https://example.com
