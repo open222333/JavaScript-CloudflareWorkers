@@ -30,4 +30,6 @@ wrangler init $dir
 cd $dir
 npm run start
 npm run deploy
+# .env 文件中的變數將被加載，並在部署過程中使用
+dotenv -- wrangler deploy --env dev
 ```
